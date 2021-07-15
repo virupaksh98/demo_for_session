@@ -116,7 +116,22 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: nidayra/demo:latest
+          tags: nidayra/demo:calc-latest
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+  PushDockerImage_GitHubPackages:
+    name: Push Docker image to GitHub Packages
+    needs: docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to GitHub Packages
+        uses: docker/build-push-action@v2
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.GH_TOKEN }}
+          registry: docker.pkg.github.com
+          repository: nidaap/demo/calc-latest
+          tag_with_ref: true
