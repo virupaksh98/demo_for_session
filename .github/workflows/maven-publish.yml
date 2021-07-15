@@ -30,3 +30,11 @@ jobs:
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v2.6.1
+      with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASS }}
+          repository: nidayra/demo
+         # tag_with_ref: true
+
