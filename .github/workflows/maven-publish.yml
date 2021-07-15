@@ -42,5 +42,5 @@ jobs:
         username: ${{ secrets.DOCKER_USER }}
         password: ${{ secrets.DOCKER_PASS }}
         repository: nidayra/demo
-        tag_with_ref: true
+        push: true
 
