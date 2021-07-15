@@ -111,4 +111,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub NidaAP Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/nidaap/gitopsdemocalcproject</url>
+		</repository>
+	</distributionManagement>
 </project>
