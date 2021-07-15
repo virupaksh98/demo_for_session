@@ -133,5 +133,5 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GH_TOKEN }}
           registry: docker.pkg.github.com
-          repository: nidaap/demo/demo-latest
+          repository: nidaap/gitopsdemocalcproject/demo-latest
           tag_with_ref: true
