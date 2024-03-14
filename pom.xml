@@ -121,8 +121,8 @@
 	<distributionManagement>
 		<repository>
 			<id>github</id>
-			<name>GitHub NidaAP Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/NidaAP/gitopsdemocalcproject</url>
+			<name>GitHub MBB Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/RRimu/gitopsdemocalcproject</url>
 		</repository>
 	</distributionManagement>
 </project>
