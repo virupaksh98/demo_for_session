@@ -20,8 +20,8 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 		
 	
-  <sonar.projectKey>rrimu</sonar.projectKey>
-  <sonar.organization>RRimu</sonar.organization>
+  <sonar.projectKey>rrimu-2</sonar.projectKey>
+  <sonar.organization>rrimu</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
 	</properties>
