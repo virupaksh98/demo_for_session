@@ -121,8 +121,9 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
 
   docker:
+    name: Publish Dockerhub
     runs-on: ubuntu-latest
-    needs: publish
+    needs: War
     steps:
       -  name: Check out the repo
          uses: actions/checkout@v2
