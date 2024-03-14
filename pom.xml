@@ -21,7 +21,7 @@
 		
 	
   <sonar.projectKey>rrimu</sonar.projectKey>
-  <sonar.organization>rrimu</sonar.organization>
+  <sonar.organization>Rrimu</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
 	</properties>
