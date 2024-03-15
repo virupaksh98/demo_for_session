@@ -119,6 +119,20 @@ jobs:
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
+  Docker:
+    runs-on: ubuntu-latest
+    name: Docker
+    needs: War
+    steps:
+        - name: Checkout Code
+          uses: actions/checkout@v2
+        - name: Push into Docker
+          uses: docker/build-push-action@v2
+          with:
+           username: ${{ secrets.DOCKER_USER }}
+           password: ${{ secrets.DOCKER_PASS }}
+           repository: ${{ secrets.DOCKER_REPO }}
+           tag_with_ref: true
         
     
         
