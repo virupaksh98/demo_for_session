@@ -66,6 +66,33 @@ jobs:
          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Needed to get PR information, if any
          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+  UnitTesting:
+      runs-on: ubuntu-latest
+      name: UT
+      needs: Compile
+      steps:
+        - run: echo should run unit Test
+        - name: Checkout Code
+          uses: actions/checkout@v2
+        - name: Test
+          run: mvn -B test --file pom.xml
+        - name: Publish Unit Test result
+          uses: EnricoMi/publish-unit-test-result-action@v1.9
+          with:
+            files: "target/surefire-reports/*.xml"
+  CodeCoverage:
+      runs-on: ubuntu-latest
+      name: CC
+      needs: UnitTesting
+      steps:
+        - run: echo should run code Coverage
+        - name: Checkout Code
+          uses: actions/checkout@v2
+        - name: Code Coverage
+          run: mvn -X org.jacoco:jacoco-maven-plugin:report 
+        
+    
+        
         
          
         
