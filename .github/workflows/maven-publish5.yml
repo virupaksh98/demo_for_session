@@ -73,7 +73,7 @@ jobs:
 
     runs-on: ubuntu-latest
     needs: Compile
-    name: UT
+    
     steps:
     - run: echo should run unit Tests
     - uses: actions/checkout@v1   
@@ -86,8 +86,7 @@ jobs:
   CodeCoverage:
 
     runs-on: ubuntu-latest
-    needs: UT
-    name: CC
+    needs: UnitTesting
     steps:
     - run: echo should run unit Tests
     - uses: actions/checkout@v1   
@@ -95,7 +94,7 @@ jobs:
       run: mvn -X org.jacoco:jacoco-maven-plugin:report
   War:
     runs-on: ubuntu-latest
-    needs: CC
+    needs: CodeCoverage
     steps:
     - run: echo should run unit Tests
     - uses: actions/checkout@v1   
