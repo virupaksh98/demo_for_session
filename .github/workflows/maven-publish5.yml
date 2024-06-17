@@ -5,7 +5,7 @@ name: Gitops CI
 
 on:
   push:
-    branches: [main]
+    branches: [m]
 
 jobs:
   Startup:
