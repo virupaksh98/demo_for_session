@@ -77,6 +77,14 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v1.9
         with:
           files: "target/surefire-reports/*.xml"
+  CodeCoverage:
+      runs-on: ubuntu-latest
+      needs: UnitTesting
+      steps:
+      - run: echo should run unit Tests
+      - uses: actions/checkout@v2
+      - name: CodeCoverage with Maven
+        run: mvn -X org.jacoco:jacoco-maven-plugin:report
 
   
       
