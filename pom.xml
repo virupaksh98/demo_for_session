@@ -21,7 +21,7 @@
 		
 	
   <sonar.projectKey>RRimu_gitopsdemocalcproject</sonar.projectKey>
-  <sonar.organization>gademo</sonar.organization>
+  <sonar.organization>ga12</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
 	</properties>
