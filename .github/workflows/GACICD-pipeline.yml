@@ -73,10 +73,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: UnitTesting
     steps:
-    - run: echo should run unit Tests
+    - run: echo should CodeCoverage
     - uses: actions/checkout@v2  
     - name: UnitTesting with Maven
       run: mvn -X org.jacoco:jacoco-maven-plugin:report
+  War:
+    runs-on: ubuntu-latest
+    needs: CodeCoverage
+    steps:
+    - run: echo should package
+    - uses: actions/checkout@v2  
+    - name: war 
+      run: mvn -X war:war
 
 
   
