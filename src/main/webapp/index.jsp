@@ -1,5 +1,5 @@
 <html>
 <body>
-<h2>Welcome All</h2>
+<h2>Welcome All to gitops session</h2>
 </body>
 </html>
